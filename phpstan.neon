@@ -1,0 +1,8 @@
+parameters:
+    level: max
+    paths:
+        - app
+        - database
+
+includes:
+    - ./vendor/nunomaduro/larastan/extension.neon
