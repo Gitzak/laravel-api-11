@@ -2,6 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Enums\CredentialType;
+use App\Models\Credential;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -9,6 +12,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
  */
 class CredentialFactory extends Factory
 {
+
+    protected $model = Credential::class;
     /**
      * Define the model's default state.
      *
@@ -17,7 +22,14 @@ class CredentialFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'name' => $this->faker->sentence(),
+            'type' => [
+                'type' => CredentialType::Bearer_auth,
+                'prefix' => 'Bearer'
+            ],
+            'value' => $this->faker->sentence(),
+            // 'metadata' => $this->faker->sentence(),
+            'user_id' => User::factory(),
         ];
     }
 }
