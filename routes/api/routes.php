@@ -5,6 +5,9 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
+
+Route::get('/', fn() => response()->json(request()->all()));
+
 Route::middleware(['auth:sanctum', 'throttle:api'])->group(static function (): void {
     Route::get('user', static fn(Request $request) => $request->user())->name('user');
 
