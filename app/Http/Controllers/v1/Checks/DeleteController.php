@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Checks;
+namespace App\Http\Controllers\v1\Checks;
 
 final class DeleteController
 {

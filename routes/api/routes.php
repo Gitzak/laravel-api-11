@@ -11,7 +11,8 @@ Route::prefix('v1')->as('v1:')->group(static function (): void {
 
     Route::get('/', fn() => response()->json(request()->route()))->middleware('sunset:' . now()->subDays(3));
 
-    Route::middleware(['auth:sanctum', 'throttle:api'])->group(static function (): void {
+    // 'auth:sanctum',
+    Route::middleware(['throttle:api'])->group(static function (): void {
         Route::get('user', static fn(Request $request) => $request->user())->name('user');
 
         Route::prefix('services')->as('services:')->group(base_path(
