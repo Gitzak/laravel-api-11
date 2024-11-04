@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Check;
 use App\Models\Credential;
 use App\Models\Service;
 use Illuminate\Database\Eloquent\Factories\Factory;

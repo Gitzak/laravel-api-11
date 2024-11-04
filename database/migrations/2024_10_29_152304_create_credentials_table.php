@@ -18,6 +18,7 @@ return new class extends Migration
             // $table->json('metadata')->nullable();
             $table->text('value');
             $table->foreignUlid('user_id')->index()->constrained('users')->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 

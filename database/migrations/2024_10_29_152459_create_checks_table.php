@@ -21,6 +21,7 @@ return new class extends Migration
             $table->json('parameters')->nullable();
             $table->foreignUlid('credential_id')->nullable()->index()->constrained('credentials')->cascadeOnDelete();
             $table->foreignUlid('service_id')->index()->constrained('services')->cascadeOnDelete();
+            $table->timestamps();
         });
     }
 
